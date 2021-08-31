@@ -7,6 +7,59 @@ Python
 Java
 Latest Version of Chrome
 
+Initialized Node.js
+Installed WDIO CLI
+Launched initial configuration guide:
+Where is your automation backend located?
+						local machine
+Which framework do you want to use?
+						mocha
+Do you want to use a compiler?
+						Babel
+Where are your test specs located?
+						'./test/specs/*.js'
+Do you want WebdriverIO to autogenerate some test files?
+						NO
+Which reporter do you want to use?
+						spec and allure
+Do you want to add a service to your test setup?
+						chromedriver
+What is the base url?
+						'https://web-stg.usko.hebronsoft.com/auth/login'
+
+Installed Sync WDIO module
+
+Used WebDriverIO API reference to add more methods.
+
+Use Jest's Expect library to add more expect validarions.
+
+Use CSS Selectors guide to find elements on a page.
+
+In wdio.conf.js made the following changes:
+
+logLevel: 'silent',
+
+    waitforTimeout: 40000,
+
+    reporters: ['spec', ['allure', { outputDir: 'temp/allure-results' }]],
+
+    before: function (capabilities, specs) {
+        browser.maximizeWindow();
+    },    
+
+    afterTest: function (test, context, { error, result, duration, passed, retries }) {
+        if (!passed) {
+            let fullName = `${test.parent}.${test.title}`;
+            browser.saveScreenshot(`./temp/screenshots/${fullName}.png`);
+        }
+    },
+    
+    Installed Allure for reports and screenshots.
+    
+    Using Page Object Model.
+
+
+
 
 To run the tests i added scripts:
 "test": "npx wdio run ./wdio.conf.js",
@@ -21,6 +74,31 @@ To run the tests i added scripts:
     I would use combination of negative and positive test cases. i would run functional and  UI tests. 
     
     I also used decision table technique for logical relationship between the inputs. Gave out a combination of inputs to identify the test cases from the available decision table
+    
+    
+    
+    Bug Report
+
+
+Bug ID/Title: 
+        Error is missing on the Login page when user enters invalid password
+ 
+Steps to reproduce: 
+                    Open the app
+                    Enter Valid username/email
+                    Enter invalid password
+                    Click Submit button
+                    Inspect the error placeholder
+Actual:
+		      There is no error
+Expected:
+		      The error message should appear  “Login Error”
+
+
+Priority: 2 (How fast bug needs to be fixed)
+Severity: Major(bug causes wrong behavior, but system is still functional)
+
+          Include Screenshots.
 
 
 
