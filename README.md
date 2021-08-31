@@ -20,7 +20,7 @@ To run the tests i added scripts:
     
     I would use combination of negative and positive test cases. i would run functional and  UI tests. 
     
-    I also used decision table technique for logicl relationship between the inputs. Gave out a combination of inputs to identify the test cases from the available desicion table
+    I also used decision table technique for logical relationship between the inputs. Gave out a combination of inputs to identify the test cases from the available decision table
 
 
 
