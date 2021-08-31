@@ -1,4 +1,15 @@
 # USKO
+
+Prerequisites: 
+Node.js
+VS Code
+Python
+Java
+Latest Version of Chrome
+
+
+
+
 Login page test cases
 
 For login page I would start with UI scenarios then perform functional test scenarios then security test.
