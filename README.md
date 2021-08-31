@@ -8,6 +8,21 @@ Java
 Latest Version of Chrome
 
 
+To run the tests i added scripts:
+"test": "npx wdio run ./wdio.conf.js",
+    "clean": "rm -rf temp",
+    "temp-win": "mkdir temp\\screenshots",
+    "temp-mac": "mkdir temp temp/screenshots",
+    "report-generate": "allure generate ./temp/allure-results -o ./temp/allure-report",
+    "report-open": "allure open ./temp/allure-report"
+    
+    
+    
+    I would use combination of negative and positive test cases. i would run functional and  UI tests. 
+    
+    I also used decision table technique for logicl relationship between the inputs. Gave out a combination of inputs to identify the test cases from the available desicion table
+
+
 
 
 Login page test cases
